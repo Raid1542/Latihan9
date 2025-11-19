@@ -4,9 +4,13 @@ const port = 8001;
 
 app.use(express.json());
 
-// Routes
+// Routes User
 const userRoutes = require('./routes/user.routes');
 app.use('/api/users', userRoutes);
+
+// Routes Produk
+const productRoutes = require('./routes/products.routes');
+app.use('/api/products', productRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello, World');
